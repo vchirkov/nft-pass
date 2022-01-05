@@ -1,0 +1,13 @@
+{
+  "name": "nft-pass",
+  "version": "1.0.0",
+  "description": "nft-pass project aims to provide a convenient way of authenticating users with the nft in their ownership",
+  "main": "index.js",
+  "repository": "https://github.com/vchirkov/nft-pass",
+  "author": "vlad.chirkov",
+  "license": "LGPL",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+}
