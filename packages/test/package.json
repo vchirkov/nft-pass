@@ -1,0 +1,25 @@
+{
+  "name": "@nft-pass/test",
+  "version": "1.0.0",
+  "description": "nft-pass web client test page",
+  "main": "./dist/index.js",
+  "repository": "https://github.com/vchirkov/nft-pass",
+  "author": "vlad.chirkov",
+  "license": "LGPL",
+  "private": true,
+  "scripts": {
+    "build": "rollup --config",
+    "watch": "rollup --config -w",
+    "start": "SERVE=true rollup --config -w"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.1.2",
+    "rollup": "^2.62.0",
+    "rollup-plugin-dotenv": "^0.3.0",
+    "rollup-plugin-serve": "^1.1.0"
+  },
+  "dependencies": {
+    "@nft-pass/client": "^1.0.0"
+  }
+}

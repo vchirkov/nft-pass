@@ -1,0 +1,17 @@
+{
+  "name": "@nft-pass/messenger",
+  "version": "1.0.0",
+  "description": "simple post message communicator based on node EventEmitter for messaging with IFrame",
+  "main": "./dist/index.js",
+  "repository": "https://github.com/vchirkov/nft-pass",
+  "author": "vlad.chirkov",
+  "license": "LGPL",
+  "scripts": {
+    "build": "rollup --config",
+    "watch": "rollup --config -w"
+  },
+  "devDependencies": {
+    "rollup": "^2.62.0",
+    "rollup-plugin-polyfill-node": "^0.8.0"
+  }
+}
