@@ -11,9 +11,10 @@
     "packages/*"
   ],
   "scripts": {
-    "watch": "npx lerna run watch --parallel",
-    "build": "npx lerna run build",
-    "pub": "npx lerna publish --no-verify-access"
+    "l-watch": "npx lerna run watch --parallel",
+    "l-build": "npx lerna run build",
+    "l-publish": "npx lerna publish --no-verify-access",
+    "start-serv": "node ./packages/server/index.js"
   },
   "dependencies": {
     "lerna": "^4.0.0"
