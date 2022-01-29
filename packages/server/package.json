@@ -21,6 +21,7 @@
     "ethers": "^5.5.3",
     "express": "^4.17.1",
     "express-formidable": "^1.2.0",
+    "express-session": "^1.17.2",
     "mongoose": "^5.10.15",
     "moralis": "^0.0.183",
     "uuid": "^8.3.2"
