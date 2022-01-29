@@ -33,10 +33,6 @@ const Root = () => {
         setLoading(false);
     }, [apiKey, message, ttl, force, forceWallet, forceFetch]);
 
-    if (error) {
-        debugger;
-    }
-
     return (
         <Grid container
               direction="row"

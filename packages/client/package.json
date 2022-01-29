@@ -15,7 +15,8 @@
     "@rollup/plugin-node-resolve": "^13.1.2",
     "@rollup/plugin-typescript": "^8.3.0",
     "rollup": "^2.62.0",
-    "rollup-plugin-dotenv": "^0.3.0"
+    "rollup-plugin-dotenv": "^0.3.0",
+    "rollup-plugin-terser": "^7.0.2"
   },
   "dependencies": {
     "@ethersproject/providers": "^5.5.2"

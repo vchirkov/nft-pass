@@ -9,5 +9,12 @@
   "private": true,
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "scripts": {
+    "watch": "npx lerna run watch --parallel",
+    "build": "npx lerna run build"
+  },
+  "dependencies": {
+    "lerna": "^4.0.0"
+  }
 }

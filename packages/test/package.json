@@ -9,8 +9,8 @@
   "private": true,
   "scripts": {
     "build": "rollup --config",
-    "watch": "rollup --config -w",
-    "start": "SERVE=true rollup --config -w"
+    "start": "SERVE=true rollup --config -w",
+    "watch": "yarn start"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.16.7",

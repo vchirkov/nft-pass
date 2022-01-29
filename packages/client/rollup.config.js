@@ -2,6 +2,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
 import commonjs from '@rollup/plugin-commonjs';
 import dotenv from 'rollup-plugin-dotenv';
+import { terser } from "rollup-plugin-terser";
 
 export default [{
     input: './index.ts',
@@ -14,6 +15,7 @@ export default [{
         typescript(),
         resolve(),
         commonjs(),
-        dotenv()
+        dotenv(),
+        terser()
     ]
 }];
