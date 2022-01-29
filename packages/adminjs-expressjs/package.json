@@ -1,14 +1,20 @@
 {
   "name": "@nft-pass/adminjs-express",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "This is an official AdminJS plugin which integrates it with Express.js framework",
   "main": "lib/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "watch": "rm -rf lib && tsc --watch",
     "build": "rm -rf lib && tsc",
     "lint": "eslint './**/*.ts'",
     "check:all": "yarn lint && yarn build && yarn test",
-    "release": "semantic-release"
+    "release": "semantic-release",
+    "prepublishOnly": "yarn build",
+    "clean": "rimraf lib",
+    "postpublish": "yarn clean"
   },
   "repository": {
     "type": "git",

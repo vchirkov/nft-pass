@@ -1,16 +1,22 @@
 {
   "name": "@nft-pass/test",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "nft-pass web client test page",
   "main": "./dist/index.js",
   "repository": "https://github.com/vchirkov/nft-pass",
   "author": "vlad.chirkov",
   "license": "LGPL",
   "private": true,
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "rollup --config",
     "start": "SERVE=true rollup --config -w",
-    "watch": "yarn start"
+    "watch": "yarn start",
+    "prepublishOnly": "yarn build",
+    "clean": "rimraf dist",
+    "postpublish": "yarn clean"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.16.7",
@@ -28,8 +34,9 @@
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
     "@mui/material": "^5.3.0",
-    "@nft-pass/client": "^1.0.0",
+    "@nft-pass/client": "^0.0.0",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "rimraf": "^3.0.2"
   }
 }

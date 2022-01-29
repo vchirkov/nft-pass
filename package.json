@@ -1,6 +1,6 @@
 {
   "name": "nft-pass",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "nft-pass project aims to provide a convenient way of authenticating users with the nft in their ownership",
   "main": "index.js",
   "repository": "https://github.com/vchirkov/nft-pass",
@@ -12,7 +12,8 @@
   ],
   "scripts": {
     "watch": "npx lerna run watch --parallel",
-    "build": "npx lerna run build"
+    "build": "npx lerna run build",
+    "pub": "npx lerna publish --no-verify-access"
   },
   "dependencies": {
     "lerna": "^4.0.0"
