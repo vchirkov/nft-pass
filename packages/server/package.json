@@ -6,6 +6,7 @@
   "repository": "https://github.com/vchirkov/nft-pass",
   "author": "vlad.chirkov",
   "license": "LGPL",
+  "private": true,
   "scripts": {
     "start": "node index.js",
     "watch": "yarn start"

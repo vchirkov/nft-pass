@@ -1,6 +1,6 @@
 # Expressjs plugin for AdminJS
 
-This is an official [AdminJS](https://github.com/SoftwareBrothers/adminjs) plugin which integrates it to [expressjs](https://expressjs.com/) framework.
+Fork of an official [AdminJS](https://github.com/SoftwareBrothers/adminjs) plugin which integrates it to [expressjs](https://expressjs.com/) framework.
 
 ## AdminJS
 
