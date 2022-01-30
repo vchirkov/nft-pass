@@ -8,6 +8,7 @@ import serve from 'rollup-plugin-serve';
 
 export default [{
     input: './index.js',
+    context: 'window',
     output: {
         dir: 'dist',
         format: 'iife'
