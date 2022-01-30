@@ -126,12 +126,13 @@ const Root = () => {
                             <Box sx={{m: 2}}>
                                 {result.nfts.map(nft => (
                                     <Card sx={{display: 'flex', my: 1}}
-                                          variant="outlined">
+                                          variant="outlined"
+                                          key={nft.token_address + nft.token_id}>
                                         <TableContainer component={Paper}>
                                             <Table>
                                                 <TableBody>
                                                     {['symbol', 'name', 'token_address', 'token_id', 'token_uri', 'contract_type'].map(field => (
-                                                        <TableRow>
+                                                        <TableRow key={field}>
                                                             <TableCell align="right">{field}</TableCell>
                                                             <TableCell>{nft[field]}</TableCell>
                                                         </TableRow>

@@ -26,6 +26,7 @@ dbo.connect().then(async db => {
     app.use('/api', require('./routes/api')(db));
     app.use('/admin', require('./routes/admin')(db, '/admin'));
     app.use('/public', express.static('public'));
+    app.get('*', (req, res) => res.redirect('/admin'));
     console.log('init start server');
     app.listen(PORT, () => console.log(`server started on PORT=${PORT}`));
 });
