@@ -10,8 +10,8 @@
     "access": "public"
   },
   "scripts": {
-    "build": "rollup --config",
-    "watch": "rollup --config -w",
+    "build": "NODE_ENV=production rollup -c",
+    "watch": "NODE_ENV=development rollup -c -w",
     "prepublishOnly": "yarn build",
     "clean": "rimraf dist",
     "postpublish": "yarn clean"
