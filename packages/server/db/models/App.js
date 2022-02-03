@@ -14,5 +14,6 @@ exports.App = mongoose.model('App', new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     },
-    nfts: [{type: String, lowercase: true}]
+    nfts: [{type: String, lowercase: true}],
+    jwtExpiresIn: {type: String, required: true, default: 24}
 }));

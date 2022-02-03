@@ -1,10 +1,11 @@
-import React, {useCallback, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import ReactDOM from 'react-dom';
 import NFTPass from '@nft-pass/client';
 import {
-    Alert, Box, Button, Card, Checkbox, Divider, FormControl, FormControlLabel, FormGroup, FormHelperText, Grid, Input,
-    InputLabel, Paper, Table, TableBody, TableCell, TableContainer, TableRow, TextField
+    Alert, Box, Button, Card, Divider, FormControl, FormHelperText, Grid, Icon, IconButton, Input, InputAdornment,
+    InputLabel, LinearProgress, Paper, Table, TableBody, TableCell, TableContainer, TableRow, TextField
 } from '@mui/material';
+import DeleteForever from '@mui/icons-material/DeleteForever';
 
 const API_KEY = process.env.API_KEY;
 const DEFAULT_MESSAGE = `Please, click sign button to proceed verifying NFT ownership. \n\nThis request will not trigger a blockchain transaction or cost any gas fees.`
@@ -12,10 +13,7 @@ const DEFAULT_MESSAGE = `Please, click sign button to proceed verifying NFT owne
 const Root = () => {
     const [apiKey, setAPIKey] = useState(API_KEY);
     const [message, setMessage] = useState(DEFAULT_MESSAGE);
-    const [ttl, setTTL] = useState(0);
-    const [force, setForce] = useState(false);
-    const [forceWallet, setForceWallet] = useState(false);
-    const [forceFetch, setForceFetch] = useState(false);
+    const [jwt, setJWT] = useState(localStorage.getItem('jwt'));
 
     const [result, setResult] = useState();
     const [error, setError] = useState()
@@ -26,12 +24,30 @@ const Root = () => {
         setResult(null);
         setError(null);
         try {
-            setResult(await NFTPass.verify({apiKey, message, ttl, force, forceWallet, forceFetch}));
+            setResult(await NFTPass.verify({apiKey, message, jwt}));
         } catch (e) {
             setError(e);
         }
         setLoading(false);
-    }, [apiKey, message, ttl, force, forceWallet, forceFetch]);
+    }, [apiKey, message, jwt]);
+
+    const auth = useCallback(async () => {
+        setLoading(true);
+        setResult(null);
+        setError(null);
+        try {
+            setResult(await NFTPass.authenticate({apiKey, message, jwt}));
+        } catch (e) {
+            setError(e);
+        }
+        setLoading(false);
+    }, [apiKey, message, jwt]);
+
+    useEffect(() => {
+        if (!result?.jwt) return;
+        setJWT(result?.jwt);
+        localStorage.setItem('jwt', result?.jwt);
+    }, [result?.jwt]);
 
     return (
         <Grid container
@@ -41,80 +57,74 @@ const Root = () => {
               spacing={2}>
             <Grid item xs={8}>
                 <Box sx={{my: 4}}>
-                    <Grid container direction="row" spacing={1}>
-                        <Grid item xs={10}>
-                            <FormControl fullWidth>
-                                <InputLabel htmlFor="api-key">apiKey</InputLabel>
-                                <Input id="api-key"
-                                       fullWidth
-                                       value={apiKey}
-                                       onChange={e => setAPIKey(e.target.value)}/>
-                                {apiKey ? (
-                                    <FormHelperText>
-                                        NFTPass Api key
-                                    </FormHelperText>
-                                ) : (
-                                    <FormHelperText>
-                                        Please, generate Api Kay on the Admin Page
-                                    </FormHelperText>
-                                )}
-                            </FormControl>
-                        </Grid>
-                        <Grid item xs={2}>
-                            <FormControl fullWidth>
-                                <InputLabel htmlFor="ttl">ttl</InputLabel>
-                                <Input id="ttl"
-                                       fullWidth
-                                       value={ttl}
-                                       onChange={e => setTTL(e.target.value)}/>
-                                <FormHelperText>
-                                    TTL number
-                                </FormHelperText>
-                            </FormControl>
-                        </Grid>
-                    </Grid>
+                    <FormControl fullWidth>
+                        <InputLabel htmlFor="api-key">apiKey</InputLabel>
+                        <Input id="api-key"
+                               fullWidth
+                               value={apiKey}
+                               onChange={e => setAPIKey(e.target.value)}/>
+                        {apiKey ? (
+                            <FormHelperText>
+                                NFTPass Api key
+                            </FormHelperText>
+                        ) : (
+                            <FormHelperText>
+                                Please, generate Api Kay on the Admin Page
+                            </FormHelperText>
+                        )}
+                    </FormControl>
                 </Box>
                 <Box sx={{my: 4}}>
-                    <Grid container direction="row" spacing={1}>
-                        <Grid item xs={10}>
-                            <TextField label="message"
-                                       fullWidth
-                                       multiline
-                                       rows={4}
-                                       value={message}
-                                       onChange={e => setMessage(e.target.value)}/>
-                        </Grid>
-                        <Grid item xs={2}>
-                            <FormGroup>
-                                <FormControlLabel label="force"
-                                                  control={
-                                                      <Checkbox name="force"
-                                                                checked={force}
-                                                                onChange={e => setForce(e.target.checked)}/>
-                                                  }/>
-                                <FormControlLabel label="forceWallet"
-                                                  control={
-                                                      <Checkbox name="forceWallet"
-                                                                checked={forceWallet}
-                                                                onChange={e => setForceWallet(e.target.checked)}/>
-                                                  }/>
-                                <FormControlLabel label="forceFetch"
-                                                  control={
-                                                      <Checkbox name="forceFetch"
-                                                                checked={forceFetch}
-                                                                onChange={e => setForceFetch(e.target.checked)}/>
-                                                  }/>
-                            </FormGroup>
-                        </Grid>
-                    </Grid>
+                    <TextField label="message"
+                               fullWidth
+                               multiline
+                               rows={4}
+                               value={message}
+                               onChange={e => setMessage(e.target.value)}/>
                 </Box>
-                <Button sx={{mb: 4}}
-                        disabled={loading}
-                        onClick={verify}
-                        variant="contained">
-                    verify
-                </Button>
+                <Grid container spacing={1}
+                      sx={{mb: 4}}>
+                    <Grid item xs={2}>
+                        <Button sx={{my: 2}}
+                                disabled={loading}
+                                onClick={verify}
+                                variant="contained"
+                                fullWidth>
+                            verify
+                        </Button>
+                    </Grid>
+                    <Grid item xs={2}>
+                        <Button sx={{my: 2}}
+                                disabled={loading}
+                                onClick={auth}
+                                variant="contained"
+                                fullWidth>
+                            authenticate
+                        </Button>
+                    </Grid>
+
+                    {jwt && (
+                        <Grid item xs={8}>
+                            <FormControl fullWidth>
+                                <InputLabel htmlFor="jwt">
+                                    JSON Web Token
+                                </InputLabel>
+                                <Input id="jwt"
+                                       readOnly
+                                       value={jwt}
+                                       endAdornment={(
+                                           <InputAdornment position="end">
+                                               <IconButton onClick={() => setJWT()}>
+                                                   <DeleteForever/>
+                                               </IconButton>
+                                           </InputAdornment>
+                                       )}/>
+                            </FormControl>
+                        </Grid>
+                    )}
+                </Grid>
                 <Divider/>
+                {loading && <LinearProgress/>}
                 {result && (
                     <Box sx={{my: 4}}>
                         {result.network && (

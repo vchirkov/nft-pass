@@ -16,7 +16,8 @@ module.exports = {
             properties: {
                 token: 'API Key',
                 network: 'Blockchain Network',
-                nfts: 'NFT Contract Addresses'
+                nfts: 'NFT Contract Addresses',
+                jwtExpiresIn: 'JWT expiration time (hours)'
             },
             buttons: {
                 save: 'Save',

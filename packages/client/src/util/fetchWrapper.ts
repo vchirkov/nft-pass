@@ -1,7 +1,8 @@
-const VERIFY_URL = process.env.VERIFY_URL;
+const API_ORIGIN = process.env.API_ORIGIN;
 
-export async function fetchNFTS(apiKey, data) {
-    const resp = await fetch(VERIFY_URL, {
+export async function fetchWrapper(apiKey, path, data) {
+    const url = new URL(path, API_ORIGIN).toString();
+    const resp = await fetch(url, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

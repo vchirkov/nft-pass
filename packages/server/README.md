@@ -1,14 +1,17 @@
-# Quick Start: Platform Configuration
+# Quick Start: Devcenter Configuration
 
 NFTPass ensures only authorized individuals have access to the right data at the right time and for the right reasons.
 The access mechanism is based on NFT ownership, making identity management completely anonymous and secure.
 
 To check on security standards, please, review verification mechanism page.
 
-## Platform Setup
+## Application Setup
 
-To start using NFTPass you need to create a new Application. This will generate a unique ‘apiKey’ and will allow to
-configure access policies. This can be done in a fairly simple manner.
+First and foremost it is needed to be authorised on the platform to start using it. Please, register
+on [this page](https://devcenter.nft-pass.net/admin/register).
+
+To start using NFTPass client you need to create a new Application. This will generate a unique ‘apiKey’ and will allow
+to configure access policies. This can be done in a fairly simple manner.
 
 First you need to click ‘Applications’ tab:
 
