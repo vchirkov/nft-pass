@@ -1,6 +1,6 @@
 {
   "name": "@nft-pass/test",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "nft-pass web client test page",
   "main": "./dist/index.js",
   "repository": "https://github.com/vchirkov/nft-pass",
@@ -35,7 +35,7 @@
     "@emotion/styled": "^11.6.0",
     "@mui/icons-material": "^5.3.1",
     "@mui/material": "^5.3.0",
-    "@nft-pass/client": "^0.1.3",
+    "@nft-pass/client": "^0.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "rimraf": "^3.0.2"
