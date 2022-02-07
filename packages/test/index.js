@@ -1,9 +1,10 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import ReactDOM from 'react-dom';
 import NFTPass from '@nft-pass/client';
+import ReactJson from 'react-json-view';
 import {
-    Alert, Box, Button, Card, Divider, FormControl, FormHelperText, Grid, Icon, IconButton, Input, InputAdornment,
-    InputLabel, LinearProgress, Paper, Table, TableBody, TableCell, TableContainer, TableRow, TextField
+    Alert, Box, Button, Card, Divider, FormControl, FormHelperText, Grid, IconButton, Input, InputAdornment,
+    InputLabel, LinearProgress, Paper, Table, TableBody, TableCell, TableContainer, TableRow, TextField, Typography
 } from '@mui/material';
 import DeleteForever from '@mui/icons-material/DeleteForever';
 
@@ -114,7 +115,10 @@ const Root = () => {
                                        value={jwt}
                                        endAdornment={(
                                            <InputAdornment position="end">
-                                               <IconButton onClick={() => setJWT()}>
+                                               <IconButton onClick={() => {
+                                                   setJWT();
+                                                   localStorage.removeItem('jwt');
+                                               }}>
                                                    <DeleteForever/>
                                                </IconButton>
                                            </InputAdornment>
@@ -129,11 +133,18 @@ const Root = () => {
                     <Box sx={{my: 4}}>
                         {result.network && (
                             <Alert severity="success">
-                                API network: <b>{result.network}</b>
+                                <div>Received a match of NFTs for the wallet</div>
+                                <div>API network: <b>{result.network}</b></div>
                             </Alert>
                         )}
+                        <Box sx={{my: 2}}>
+                            <Typography variant="h5" gutterBottom>Response:</Typography>
+                            <ReactJson src={result}
+                                       collapsed/>
+                        </Box>
                         {result.match ? (
-                            <Box sx={{m: 2}}>
+                            <Box sx={{my: 2}}>
+                                <Typography variant="h5" gutterBottom>NFTs:</Typography>
                                 {result.nfts.map(nft => (
                                     <Card sx={{display: 'flex', my: 1}}
                                           variant="outlined"
