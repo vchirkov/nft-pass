@@ -1,7 +1,7 @@
 {
   "name": "@nft-pass/demo",
   "private": true,
-  "version": "0.2.0",
+  "version": "0.4.0",
   "scripts": {
     "dev": "next dev -p 3005",
     "build": "next build",
@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@nft-pass/client": "^0.3.0",
+    "@nft-pass/client": "^0.4.0",
     "classnames": "^2.3.1",
     "cookies-next": "^2.0.4",
     "next": "12.0.10",
