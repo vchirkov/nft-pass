@@ -6,7 +6,7 @@ import {terser} from 'rollup-plugin-terser';
 
 export default [{
     input: './index.ts',
-    context: 'window',
+    context: 'global',
     output: [{
         file: 'dist/index.js',
         format: 'umd',

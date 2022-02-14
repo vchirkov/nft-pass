@@ -1,9 +1,5 @@
-import React, {useCallback} from 'react';
+import React from 'react';
 import classnames from 'classnames';
-import {removeCookies} from 'cookies-next';
-import {useRouter} from 'next/router';
-
-import {useNFTPassAuth} from '../../hooks/useNFTPass';
 import {
     navbar_main,
     navbar_login,
