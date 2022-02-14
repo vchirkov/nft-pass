@@ -1,6 +1,6 @@
 {
   "name": "@nft-pass/client",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "nft-pass web client",
   "main": "./dist/index.js",
   "module": "./dist/index.es.js",
