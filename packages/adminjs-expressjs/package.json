@@ -1,6 +1,6 @@
 {
   "name": "@nft-pass/adminjs-express",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "This is an official AdminJS plugin which integrates it with Express.js framework",
   "main": "lib/index.js",
   "publishConfig": {
