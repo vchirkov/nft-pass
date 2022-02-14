@@ -1,0 +1,31 @@
+.footer {
+    color: rgb(161, 161, 161);
+    margin-top: 70px;
+    display: flex;
+    flex-direction: row;
+    height: 300px;
+    font-size: 13px;
+    justify-content: center;
+    width: 100%;
+}
+
+.col {
+    min-width: 200px;
+    text-decoration: none;
+    color: rgb(161, 161, 161);
+    list-style-type: none;
+    padding: 20px;
+}
+
+.li {
+    padding: 8px;
+}
+
+.link {
+    text-decoration: none;
+    color: rgb(161, 161, 161);;
+}
+
+.link:hover {
+    text-decoration: underline;
+}

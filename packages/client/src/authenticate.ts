@@ -46,6 +46,5 @@ export async function authenticate(
         jwt
     }: NFTPassAuthParams = { apiKey: null }): Promise<NFTPassAuthData> {
     checkApiKey(apiKey);
-    checkMetamask();
     return await fetchWrapper(apiKey, '/api/client/authenticate', jwt ? { jwt } : await sign(message));
 }

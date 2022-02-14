@@ -1,0 +1,25 @@
+.nf_or {
+    padding-top: 10px;
+    padding-left: 50px;
+    max-width: 600px;
+}
+
+.h1_nf_or {
+    color: white;
+    font-size: 50px;
+    padding-bottom: 0px;
+}
+
+.para1 {
+    color: white;
+    font-size: 20px;
+
+}
+
+.watch_now {
+    color: white;
+}
+
+.call_to{
+    margin-top: 20px;
+}

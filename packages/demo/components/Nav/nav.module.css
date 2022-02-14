@@ -1,0 +1,50 @@
+.navbar_main {
+    font-family: 'Arial';
+    height: 60px;
+    background-color: black;
+    width: 100%;
+}
+
+.navbar_login {
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    z-index: 100;
+}
+
+.demoflix_logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding-left: 50px;
+}
+
+.nav_right {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.btn_join_now {
+    cursor: pointer;
+    border: 1px solid red;
+    margin: 0 50px 0 6px;
+    padding: 8px 24px 8px 24px;
+    font-size: 13px;
+    background-color: red;
+    color: white;
+    text-decoration: none;
+}
+
+.btn_sign {
+    cursor: pointer;
+    border: 0.5px solid white;
+    /* border-radius: 5px; */
+    margin: 0 50px 0 6px;
+    padding: 8px 20px 8px 20px;
+    font-size: 13px;
+    background-color: black;
+    color: white;
+}

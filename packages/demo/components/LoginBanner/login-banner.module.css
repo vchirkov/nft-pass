@@ -1,0 +1,49 @@
+.lb_main {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('./img/banner.jpeg');
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lb_main::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, .9) 0, rgba(0, 0, 0, .6) 60%, rgba(0, 0, 0, .9) 100%)
+}
+
+.lb_story {
+    z-index: 1;
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.lb_h1 {
+    font-size: 50px;
+    margin: 0;
+}
+
+.lb_h2 {
+    font-size: 30px;
+    margin: 0;
+}
+
+.lb_instruction {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.lb_nav_instruction {
+    display: block;
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: underline;
+}

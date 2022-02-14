@@ -1,0 +1,19 @@
+.lf_container{
+    border-top: 2px solid #222;
+}
+
+.lf_main {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 70px auto;
+    align-items: center;
+    font-size: 22px;
+}
+
+.lf_header {
+    font-size: 30px;
+    margin: 0;
+    padding-bottom: 20px;
+}

@@ -42,6 +42,5 @@ export async function verify(
         jwt
     }: NFTPassVerifyParams = { apiKey: null }): Promise<NFTPassVerifyData> {
     checkApiKey(apiKey);
-    checkMetamask();
     return await fetchWrapper(apiKey, '/api/client/verify', jwt ? { jwt } : await sign(message));
 }

@@ -9,5 +9,5 @@ export function checkApiKey(apiKey: string) {
 }
 
 export function checkMetamask() {
-    if (!window.ethereum) throw new Error('No crypto wallet found. Please install it.');
+    if (!window?.ethereum) throw new Error('No crypto wallet found. Please install one.');
 }

@@ -1,0 +1,52 @@
+@import '~react-toastify/dist/ReactToastify.css';
+
+html,
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding: 0;
+    margin: 0;
+    background-color: rgb(26, 26, 26);
+    min-height: 100vh;
+}
+
+
+a {
+    color: inherit;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.rec.rec-carousel-wrapper {
+    overflow: hidden;
+}
+
+.rec.rec-item-wrapper {
+    overflow: visible;
+}
+
+.rec.rec-slider-container {
+    overflow: visible;
+}
+
+.rec.rec-arrow {
+    z-index: 2;
+    background-color: transparent;
+    box-shadow: none;
+    transition: transform ease 0.25s;
+}
+
+.rec.rec-arrow:hover:enabled,
+.rec.rec-arrow:hover:enabled,
+.rec.rec-arrow:focus:enabled {
+    z-index: 2;
+    background-color: transparent;
+    box-shadow: none;
+    transform: scale(1.5);
+}

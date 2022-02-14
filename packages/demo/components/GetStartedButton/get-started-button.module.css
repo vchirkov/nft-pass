@@ -1,0 +1,14 @@
+.get_started {
+    height: 60px;
+    font-size: 26px;
+    padding: 0 26px;
+    margin: 20px;
+    background-color: #e50914;
+    border: 0;
+    color: white;
+}
+
+.get_started:hover {
+    background: #f40612;
+    cursor: pointer;
+}
