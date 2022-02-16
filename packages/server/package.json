@@ -1,6 +1,6 @@
 {
   "name": "@nft-pass/server",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "description": "nft-pass web server",
   "main": "index.js",
   "repository": "https://github.com/vchirkov/nft-pass",
@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@adminjs/mongoose": "^2.0.0",
-    "@nft-pass/adminjs-express": "^0.4.3",
+    "@nft-pass/adminjs-express": "^0.4.4",
     "adminjs": "^5.5.0",
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
