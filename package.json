@@ -11,9 +11,9 @@
     "packages/*"
   ],
   "scripts": {
-    "l-watch": "npx lerna run watch --parallel",
-    "l-build": "npx lerna run build",
-    "l-publish": "npx lerna publish --no-verify-access --force-publish",
+    "watch": "npx lerna run watch --parallel",
+    "build": "npx lerna run build",
+    "pub": "npx lerna publish --no-verify-access --force-publish",
     "heroku-postbuild": "yarn workspace @nft-pass/adminjs-express build",
     "start-serv": "node ./packages/server/index.js"
   },
