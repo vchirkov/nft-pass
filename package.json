@@ -17,6 +17,9 @@
     "heroku-postbuild": "yarn workspace @nft-pass/adminjs-express build",
     "start-serv": "node ./packages/server/index.js"
   },
+  "engines": {
+    "yarn": "1.22.10"
+  },
   "resolutions": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
