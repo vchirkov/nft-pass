@@ -8,11 +8,13 @@ import metamask from './img/metamask.png';
 import eth from './img/eth.png';
 import rarible from './img/rarible.png';
 import {LoginFooter} from '../components/LoginFooter/LoginFooter';
+import {MetamaskTestnet} from '../components/MetamaskTestnet/MetamaskTestnet';
 
 export default function Login() {
     const auth = useNFTPassAuth();
     const scrollToInstructionRef = useRef();
     const [loading, setLoading] = useState(false);
+    const [metamaskTestnetHidden, setMetamaskTestnetHidden] = useState(true);
 
     const signin = useCallback(async () => {
         setLoading(true);
@@ -33,28 +35,45 @@ export default function Login() {
                          text={(
                              <>
                                  <div>
-                                     You need to have a Metamask wallet on Ropsten network to be able to retrieve the
-                                     necessary NFT in the next steps.
+                                     You need to have a Metamask wallet on the Ropsten network to be able to retrieve
+                                     the necessary NFT in the next steps.
                                  </div>
                                  <a href="https://blog.wetrust.io/how-to-install-and-use-metamask-7210720ca047"
-                                    style={{marginTop: 10, display: 'block'}}
+                                    style={{margin: '10px 0', display: 'block'}}
                                     target="_blank">
-                                     Please, find metamask installation instruction here.
+                                     Please, find the Metamask installation instruction here.
+                                 </a>
+                                 <a style={{fontSize: 20}}
+                                    href="#metamask-testnet"
+                                    onClick={e => {
+                                        e.preventDefault();
+                                        setMetamaskTestnetHidden(!metamaskTestnetHidden)
+                                    }}>
+                                     Show instruction on how to connect wallet to the Ropsten network.
                                  </a>
                              </>
                          )}/>
+            <MetamaskTestnet hidden={metamaskTestnetHidden}/>
             <Instruction title="2. Get some rETH funds"
                          img={eth.src}
                          text={(
                              <>
-                                 To get the NFT in the last step, your wallet should have some rETH funds. You can
-                                 request them with no charge from public faucets
-                                 <div style={{marginTop: 10}}>
+                                 <div>
+                                     To get the NFT in the last step, your wallet should have some rETH funds. You can
+                                     request them at no charge from public faucets.
+                                 </div>
+                                 <div style={{margin: '10px 0'}}>
                                      Please, proceed to faucets <a
                                      href="https://faucet.egorfine.com/"
-                                     target="_blank">here</a> and <a href="https://faucet.dimensions.network/"
-                                                                     target="_blank">
+                                     target="_blank">here</a>, <a href="https://faucet.dimensions.network/"
+                                                                  target="_blank">
+                                     here</a>, or <a href="https://faucet.metamask.io/"
+                                                     target="_blank">
                                      here</a>.
+                                 </div>
+                                 <div style={{fontSize: 11}}>
+                                     It might take a couple of minutes to get rETH, so it is recommended to
+                                     request from all of them.
                                  </div>
                              </>
                          )}/>
